@@ -14,6 +14,9 @@
 
 - standard_rsa.py：标准RSA解密代码
 - standard_rsa_crt.py：RSA的中国剩余定理解密加速优化模板代码。这两个文件是用来做对比的
+- rsa_mermaid_helper.py：画mermaid流程图需要准备一组比较小的案例数据
+- rsa_garner_mermaid_helper.py：画d_p、d_q加速RSA解密的mermaid流程图的辅助代码
+- buu_rsa1_crt.py：buu RSA1这题直接用**中国剩余定理**也能做
 
 ## 青岑CTF《初识RSA》（题源：NewStar2025-Week1）
 
