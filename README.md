@@ -77,3 +77,14 @@ print("c=", c)
 3. n和p已知，所以可以直接用gmpy2的`iroot`（开n次方根）求出q：`q, _ = iroot(n // p // p // p, 2)`
 4. p和q是素数， $e = 65537,\ n = p^3 * q^2,\ c = m^e\ mod\ n$ 。由欧拉定理，明文就是 $m = c^d\ mod\ n$ 。其中d为e在模 $\phi(n)$ 意义下的逆元，用gmpy2来求：`d = invert(e, phi)`
 5. 根据欧拉函数的表达式得 $\phi(n) = p ^ 2 * (p - 1) * q * (q - 1)$
+
+## buu rsa 请少侠自己摸索
+
+ras是一个非常神秘的算法，那么它神秘在哪里 请少侠自己摸索！ 注意：得到的 flag 请包上 flag{} 提交
+
+- 法1：用到名为`rsa`的包。`buu_rsa_请少侠自己摸索\buu_rsa_shaoxia_rsa.py`
+- 法2：直接用`gmpy2`求解。`buu_rsa_请少侠自己摸索\buu_rsa_shaoxia.py`。因为开头有坏数据所以没法 decode 。而 rsa 这个包能帮我们自动去掉坏数据
+
+`rsa`包的安装：`pip install --user rsa`
+
+通过阅读源码可知，`libnum`的`s2n`和`rsa`包的`decrypt`方法主要都是用`int.from_bytes(raw_bytes, "big", signed=False)`来把字符串转为int的
